@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Falls apart</title>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+		<style>
+			body {
+				margin: 0;
+				overflow: hidden;
+			}
+			#scene {
+				margin: 0;
+				width: 100%;
+			}
+			#left, #right {
+				position: absolute;
+			}
+			#left {
+				left: 0;
+				width: 300px;
+			}
+			#right {
+				right: 0;
+				width: 300px;
+			}
+			#canvas1 {
+				position: relative;
+				display: block;
+				width: 300px;
+				height: 100%;
+				right: 0;
+			}
+			#canvas2 {
+				position: relative;
+				display: block;
+				width: 300px;
+				height: 100%;
+				left: 0;
+			}
+			@media all and ( max-width: 850px ) {
+				#left, #right {
+					display: none;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="scene">
+			<script type="module" src="js/tree.js"></script>
+			<div id="right">
+				<canvas id="canvas1"></canvas>
+					<script type="module" src="js/right.js"></script>
+			</div>
+			<div id="left">
+				<canvas id="canvas2"></canvas>
+				<script type="module" src="js/left.js"></script>
+			</div>
+		</div>
+	</body>
+</html>
