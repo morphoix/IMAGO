@@ -68,11 +68,10 @@ const GlobalStyles = createGlobalStyle`
     text-decoration: none;
     transition-property: color;
     transition-duration: 0.4s;
-    border-radius: 5px;
+    border-radius: 3px;
     @media (max-width: ${({ theme }) => theme.mobile}) {
-      font-size: 1rem;
-      transition: none;
-      padding: 1rem;
+      background: none;
+      color: ${({ theme }) => theme.primaryDark};
     }
   }
   a:hover {
@@ -80,8 +79,8 @@ const GlobalStyles = createGlobalStyle`
     background-color: ${({ theme }) => theme.primaryHover};
   }
   a.active {
-      color: ${({ theme }) => theme.primaryHover};
-      background-color: ${({ theme }) => theme.primaryLight};
+    color: ${({ theme }) => theme.primaryHover};
+    background-color: ${({ theme }) => theme.primaryLight};
   }
   button:active, button:focus, a:active, a:focus {
     outline: none !important;
@@ -93,6 +92,13 @@ const GlobalStyles = createGlobalStyle`
   }
   button::-moz-focus-inner {
     border: 0 !important;
+  }
+  .hide:hover {
+    transform: ${({ open }) => open ? 'translateY(0)' : 'translateY(-100%)'};
+    transition: transform 1s ease-in-out;
+    @media (max-width: ${({ theme }) => theme.mobile}) {
+      display: none;
+    }
   }
 `
 const Container = styled(animated.div)`
@@ -108,8 +114,14 @@ const Container = styled(animated.div)`
   box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.05);
   will-change: width, height;
   @media (max-width: ${({ theme }) => theme.mobile}) {
-    grid-template-columns: 100% 100% 1fr;
-    padding: 0;
+    display: flex;
+    padding-top: 140px;
+    grid-gap: 15px;
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    scrollbar-width: none;
   }
 `
 
@@ -117,7 +129,7 @@ const Item = styled(animated.div)`
   width: 100%;
   height: 100%;
   background: white;
-  border-radius: 5px;
+  border-radius: 3px;
   will-change: transform, opacity;
   background-size: cover;
   -moz-background-size: cover;

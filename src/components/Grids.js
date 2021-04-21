@@ -42,6 +42,7 @@ export default function Grids () {
                 >
                 { item.name }
             </NavLink>
+            <div open={open} class='hide' style={{ height: '80%', background: 'rgba(250, 250, 250, .05)' }} />
           </Item>
         ))}
       </Container>
