@@ -1,13 +1,12 @@
 import React, { useRef, useState } from 'react'
 import { Canvas, useFrame } from 'react-three-fiber'
-import { useWindowSize } from '../../hooks'
 
 function Box(props) {
   const mesh = useRef()
   const [ hovered, setHover ] = useState(false)
   const [ active, setActive ] = useState(false)
   useFrame(() => {
-    mesh.current.rotation.z += 0.01
+    mesh.current.rotation.z += 0.005
   })
   return (
     <mesh
@@ -16,7 +15,7 @@ function Box(props) {
       onClick={ (e) => setActive(!active) }
       onPointerOver={ (e) => setHover(true) }
       onPointerOut={ (e) => setHover(false) }>
-      <ringGeometry args={[ 1, 4, 3, 1 ]} />
+      <ringGeometry args={[ 2, 6, 3, 1 ]} />
       <meshPhysicalMaterial 
         color={ hovered ? '#3d5a80' : '#fb8500' } 
         emissive={ hovered ? '#3d5a80' : '#fb8500' }
@@ -33,13 +32,14 @@ function Box(props) {
 
 export default function Header() {
   return (
-    <Canvas style={{ width: 170, height: 65, margin: 0 }}>
+    <Canvas style={{ width: 400, height: 150, margin: 0 }}>
       <spotLight position={[-10, 10, 10]} angle={0.55} penumbra={1} />
       <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
       <pointLight position={[20, 10, 20]} />
-      <Box position={[ 0, 0.5, 1 ]} />
-      <Box position={[ -5, 1.5, 0 ]} />
-      <Box position={[ 13, -0.5, -5 ]} />
+      <Box position={[ -3, 0.5, -5 ]} />
+      <Box position={[ 3, 1.5, -9 ]} />
+      <Box position={[ -7, 1, 0 ]} />
+      <Box position={[ 9, 3, -11 ]} />
     </Canvas>
   )
 }
