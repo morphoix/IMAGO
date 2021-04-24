@@ -15,7 +15,7 @@ function Box(props) {
       onClick={ (e) => setActive(!active) }
       onPointerOver={ (e) => setHover(true) }
       onPointerOut={ (e) => setHover(false) }>
-      <ringGeometry args={[ 2, 6, 3, 1 ]} />
+      <ringGeometry args={[ 2, 8, 3, 1 ]} />
       <meshPhysicalMaterial 
         color={ hovered ? '#3d5a80' : '#fb8500' } 
         emissive={ hovered ? '#3d5a80' : '#fb8500' }
@@ -32,7 +32,7 @@ function Box(props) {
 
 export default function Header() {
   return (
-    <Canvas style={{ width: 400, height: 150, margin: 0 }}>
+    <Canvas style={{ width: '100vw', height: 150, margin: 0 }}>
       <spotLight position={[-10, 10, 10]} angle={0.55} penumbra={1} />
       <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
       <pointLight position={[20, 10, 20]} />
@@ -40,6 +40,9 @@ export default function Header() {
       <Box position={[ 3, 1.5, -9 ]} />
       <Box position={[ -7, 1, 0 ]} />
       <Box position={[ 9, 3, -11 ]} />
+      <Box position={[ 17, 7, -15 ]} />
+      <Box position={[ 25, 12, -19 ]} />
+
     </Canvas>
   )
 }

@@ -6,8 +6,6 @@ import data from '../data'
 import Burger from './Burger/Burger'
 import Header from './Header'
 
-const menuId = "main-menu"
-
 export default function Grids () {
     const [open, setOpen] = useState(false)
   
@@ -15,8 +13,8 @@ export default function Grids () {
     const { size, opacity, ...rest } = useSpring({
       ref: springRef,
       config: config.stiff,
-      from: { size: '20%', background: '#fb8500' },
-      to: { size: open ? '100%' : '20%', background: open ? 'rgba(250, 250, 250, .6)' : 'rgba(250, 250, 250, .0)' }
+      from: { size: '10%', background: '#fb8500' },
+      to: { size: open ? '100%' : '10%', background: open ? 'rgba(2, 48, 71, .8)' : 'rgba(2, 48, 71, .0)' }
     })
   
     const transRef = useRef()
@@ -31,18 +29,16 @@ export default function Grids () {
     useChain(open ? [springRef, transRef] : [transRef, springRef], [0, open ? 0.1 : 0.6])
   
     return (
-      <Container style={{ ...rest, width: size, height: size }} onClick={() => setOpen(open => !open)}>
-        <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
+      <Container style={{ ...rest, width: '100%', height: size }} onClick={() => setOpen(open => !open)}>
+        <Burger open={open} setOpen={setOpen} onClick={() => setOpen(open => !open)}/>
         <Header />
         {transitions.map(({ item, key, props }) => (
-          <Item key={key} style={{ ...props, backgroundImage: item.css }} >
-            <NavLink
-              to={ item.nav || '/' }
-              exact
-                >
+          <Item key={key} style={{ ...props, backgroundImage: item.css }}>
+            <div open={open} className='hide' style={{ height: '100%' }}>
+              <NavLink to={ item.nav || '/' }>
                 { item.name }
-            </NavLink>
-            <div open={open} class='hide' style={{ height: '80%', background: 'rgba(250, 250, 250, .05)' }} />
+              </NavLink>
+            </div>
           </Item>
         ))}
       </Container>

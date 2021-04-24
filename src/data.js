@@ -77,5 +77,11 @@ export default  [
       css: 'url(./assets/physis.png)',
       height: 400
     },
+    { id: 13,
+      nav: './ThreeDMenu',
+      name: '3DMenu',
+      css: 'url(./assets/3Dmenu.png)',
+      height: 400
+    },
   ]
   

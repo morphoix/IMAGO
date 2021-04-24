@@ -4,7 +4,7 @@ import { StyledBurger } from './Burger.styled'
 
 const Burger = ({ open, setOpen, ...props }) => {
   return (
-    <StyledBurger aria-label="Toggle menu" open={open} onClick={ () => setOpen(!open) } {...props}>
+    <StyledBurger aria-label="Toggle menu" open={open} {...props}>
       <span />
       <span />
       <span />

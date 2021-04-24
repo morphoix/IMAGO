@@ -15,7 +15,8 @@ import { Home,
         Hope,
         Tank,
         FallsApart,
-        Physis } from './pages'
+        Physis,
+        ThreeDMenu } from './pages'
 import Grids from './components/Grids'
 
 function App() {
@@ -23,9 +24,9 @@ function App() {
       <ThemeProvider theme={theme}>
         <GlobalStyles />
         <BrowserRouter>
-        <img id='logo' src="./assets/logo.png" alt="imago logo" />
-        <small>web gallery by <a href="https://github.com/morphoix" target="_blank">morphoix</a></small>
-        <Grids />
+          <img id='logo' src="./assets/logo.png" alt="imago logo" />
+          <small>web gallery by <a href="https://github.com/morphoix" target="_blank">morphoix</a></small>
+          <Grids />
           <Switch>
             <Route path={'/'} exact component={ Home } />
             <Route path={'/Eternal Waiting'} exact component={ Fox } />
@@ -40,6 +41,7 @@ function App() {
             <Route path={'/Tank'} exact component={ Tank } />
             <Route path={'/FallsApart'} exact component={ FallsApart } />
             <Route path={'/Physis'} exact component={ Physis } />
+            <Route path={'/ThreeDMenu'} exact component={ ThreeDMenu } />
           </Switch>
         </BrowserRouter>
       </ThemeProvider>

@@ -35,17 +35,17 @@ const GlobalStyles = createGlobalStyle`
   #logo {
     position: absolute;
     display: flex;
-    height: 8rem;
+    height: 7.3rem;
     width: auto;
     padding: 18px;
-    z-index: 888;
+    right: 0;
+    bottom: 0;
   }
   small {
     display: block;
-    top: 5.3rem;
+    bottom: 1.4rem;
     position: absolute;
-    left: 3.3rem;
-    z-index: 8889;
+    right: 25px;
   }
   small a {
     text-transform: none;
@@ -61,7 +61,7 @@ const GlobalStyles = createGlobalStyle`
   a {
     font-size: 0.8rem;
     text-transform: uppercase;
-    padding: 0.8rem;
+    padding: 0.5rem;
     margin: 0.5rem;
     color: ${({ theme }) => theme.primaryLight};
     background-color: ${({ theme }) => theme.primaryDark};
@@ -71,6 +71,7 @@ const GlobalStyles = createGlobalStyle`
     border-radius: 3px;
     @media (max-width: ${({ theme }) => theme.mobile}) {
       background: none;
+      font-size: 1rem;
       color: ${({ theme }) => theme.primaryDark};
     }
   }
@@ -93,31 +94,32 @@ const GlobalStyles = createGlobalStyle`
   button::-moz-focus-inner {
     border: 0 !important;
   }
-  .hide:hover {
-    transform: ${({ open }) => open ? 'translateY(0)' : 'translateY(-100%)'};
-    transition: transform 1s ease-in-out;
+  .hide {
+    background: rgba(0, 0, 0, .4);
     @media (max-width: ${({ theme }) => theme.mobile}) {
-      display: none;
+      background: rgba(0, 0, 0, .0);
     }
+  }
+  .hide:hover {
+   background: rgba(0, 0, 0, .0);
   }
 `
 const Container = styled(animated.div)`
   position: absolute;
   right: 0;
   width: 100%;
-  height: 100%;
-  padding: 25px;
+  height: auto;
   display: grid;
-  grid-template-columns: repeat(4, minmax(200px, 1fr));
-  grid-gap: 25px;
+  grid-template-columns: repeat(4, minmax(300px, 1fr));
+  grid-gap: 20px;
+  padding: 20px;
   cursor: pointer;
   box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.05);
   will-change: width, height;
   @media (max-width: ${({ theme }) => theme.mobile}) {
     display: flex;
-    padding-top: 140px;
-    grid-gap: 15px;
-    overflow-x: auto;
+    flex-direction: column;
+    overflow: auto;
     &::-webkit-scrollbar {
       display: none;
     }
@@ -133,5 +135,8 @@ const Item = styled(animated.div)`
   will-change: transform, opacity;
   background-size: cover;
   -moz-background-size: cover;
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    height: 200px;
+  }
 `
 export { GlobalStyles, Container, Item }
