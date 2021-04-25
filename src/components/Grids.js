@@ -13,8 +13,8 @@ export default function Grids () {
     const { size, opacity, ...rest } = useSpring({
       ref: springRef,
       config: config.stiff,
-      from: { size: '10%', background: '#fb8500' },
-      to: { size: open ? '100%' : '10%', background: open ? 'rgba(2, 48, 71, .8)' : 'rgba(2, 48, 71, .0)' }
+      from: { size: '20%', background: '#fb8500' },
+      to: { size: open ? '100%' : '20%', background: open ? 'rgba(2, 48, 71, .8)' : 'rgba(2, 48, 71, .0)' }
     })
   
     const transRef = useRef()
@@ -30,17 +30,18 @@ export default function Grids () {
   
     return (
       <Container style={{ ...rest, width: '100%', height: size }} onClick={() => setOpen(open => !open)}>
+        <h3>VIEW</h3>
         <Burger open={open} setOpen={setOpen} onClick={() => setOpen(open => !open)}/>
-        <Header />
         {transitions.map(({ item, key, props }) => (
           <Item key={key} style={{ ...props, backgroundImage: item.css }}>
-            <div open={open} className='hide' style={{ height: '100%' }}>
+            <div className='hide' style={{ height: '100%' }}>
               <NavLink to={ item.nav || '/' }>
                 { item.name }
               </NavLink>
             </div>
           </Item>
         ))}
+        <Header />
       </Container>
     )
   }

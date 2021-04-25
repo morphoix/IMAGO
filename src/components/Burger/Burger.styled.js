@@ -4,7 +4,7 @@ export const StyledBurger = styled.button`
   position: absolute;
   top: 10px;
   right: 10px;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: space-around;
   width: 2rem;
@@ -12,6 +12,9 @@ export const StyledBurger = styled.button`
   background: transparent;
   border: none;
   padding: 0;
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    display: flex;
+  }
   span {
     width: 2rem;
     height: 0.12rem;

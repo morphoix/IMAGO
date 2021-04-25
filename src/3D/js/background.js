@@ -116,6 +116,7 @@ function init( font ) {
 
 	renderer = new THREE.WebGLRenderer( { antialias: true } );
 	renderer.setPixelRatio( window.devicePixelRatio );
+	renderer.setClearColor( 0x2b2d42 );
 	renderer.setSize( WIDTH, HEIGHT );
 	//postprocessing
 	let bloomPass = new UnrealBloomPass( new THREE.Vector2( 

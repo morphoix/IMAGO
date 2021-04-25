@@ -35,11 +35,28 @@ const GlobalStyles = createGlobalStyle`
   #logo {
     position: absolute;
     display: flex;
-    height: 7.3rem;
+    height: 8rem;
     width: auto;
     padding: 18px;
     right: 0;
     bottom: 0;
+  }
+  h3 {
+    display: table-cell;
+    letter-spacing: 4px;
+    box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.05);
+    vertical-align: middle;
+    line-height: 60px;
+    height: 60px;
+    padding: 0;
+    width: 80px;
+    border: 1px solid ${({ theme }) => theme.primaryHover};
+    background-color: ${({ theme }) => theme.primaryDark};
+    border-radius: 3px;
+    text-align: center;
+    @media (max-width: ${({ theme }) => theme.mobile}) {
+      display: none;
+    }
   }
   small {
     display: block;
@@ -70,9 +87,7 @@ const GlobalStyles = createGlobalStyle`
     transition-duration: 0.4s;
     border-radius: 3px;
     @media (max-width: ${({ theme }) => theme.mobile}) {
-      background: none;
       font-size: 1rem;
-      color: ${({ theme }) => theme.primaryDark};
     }
   }
   a:hover {
@@ -114,10 +129,10 @@ const Container = styled(animated.div)`
   grid-gap: 20px;
   padding: 20px;
   cursor: pointer;
-  box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.05);
   will-change: width, height;
   @media (max-width: ${({ theme }) => theme.mobile}) {
     display: flex;
+    padding: 0;
     flex-direction: column;
     overflow: auto;
     &::-webkit-scrollbar {
@@ -137,6 +152,8 @@ const Item = styled(animated.div)`
   -moz-background-size: cover;
   @media (max-width: ${({ theme }) => theme.mobile}) {
     height: 200px;
+    padding: 20px;
+    border-radius: none;
   }
 `
 export { GlobalStyles, Container, Item }
