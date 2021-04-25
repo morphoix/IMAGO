@@ -27,6 +27,7 @@ export default function Grids () {
       leave: { opacity: 0, transform: 'scale(0)' }
     })
     useChain(open ? [springRef, transRef] : [transRef, springRef], [0, open ? 0.1 : 0.6])
+    transitions.reverse()
   
     return (
       <Container style={{ ...rest, width: '100%', height: size }} onClick={() => setOpen(open => !open)}>
