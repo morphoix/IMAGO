@@ -7,6 +7,8 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   *, *::after, *::before {
     box-sizing: border-box;
@@ -16,7 +18,7 @@ const GlobalStyles = createGlobalStyle`
     justify-content: center;
     align-items: center;
     user-select: none;
-    background: ${({ theme }) => theme.primaryDark};;
+    background: ${({ theme }) => theme.primaryDark};
     color: ${({ theme }) => theme.primaryLight};
     text-rendering: optimizeLegibility;
     font-family: 'Ubuntu Condensed', sans-serif;
@@ -35,34 +37,38 @@ const GlobalStyles = createGlobalStyle`
   #logo {
     position: absolute;
     display: flex;
-    height: 8rem;
+    height: 6.5rem;
     width: auto;
-    padding: 18px;
+    padding: 10px;
     right: 0;
     bottom: 0;
   }
   h3 {
     display: table-cell;
-    letter-spacing: 4px;
-    box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.05);
+    letter-spacing: 1px;
+    box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.1);
     vertical-align: middle;
-    line-height: 60px;
-    height: 60px;
-    padding: 0;
-    width: 80px;
-    border: 1px solid ${({ theme }) => theme.primaryHover};
-    background-color: ${({ theme }) => theme.primaryDark};
+    line-height: 50px;
+    height: 50px;
+    padding: 0; 
+    margin: 0;
+    width: 70px;
+    color: ${({ theme }) => theme.primaryHover};
     border-radius: 3px;
     text-align: center;
+    z-index: 9999;
     @media (max-width: ${({ theme }) => theme.mobile}) {
       display: none;
     }
   }
+  h3:hover {
+    background-color: ${({ theme }) => theme.primaryDark};
+  }
   small {
     display: block;
-    bottom: 1.4rem;
+    bottom: 1rem;
     position: absolute;
-    right: 25px;
+    right: 10px;
   }
   small a {
     text-transform: none;
@@ -71,24 +77,23 @@ const GlobalStyles = createGlobalStyle`
     border-radius: none;
     background: none;
     color: ${({ theme }) => theme.primaryHover};
+    text-shadow: none;
   }
   small a:hover {
     background-color: transparent;
   }
   a {
-    font-size: 0.8rem;
+    font-size: 1rem;
     text-transform: uppercase;
     padding: 0.5rem;
     margin: 0.5rem;
-    color: ${({ theme }) => theme.primaryLight};
-    background-color: ${({ theme }) => theme.primaryDark};
+    box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 1px ${({ theme }) => theme.primaryLight};
+    color: ${({ theme }) => theme.primaryHover};
     text-decoration: none;
     transition-property: color;
     transition-duration: 0.4s;
-    border-radius: 3px;
-    @media (max-width: ${({ theme }) => theme.mobile}) {
-      font-size: 1rem;
-    }
+    border-radius: 2px;
   }
   a:hover {
     color: ${({ theme }) => theme.primaryDark};
@@ -129,6 +134,7 @@ const Container = styled(animated.div)`
   grid-gap: 20px;
   padding: 20px;
   cursor: pointer;
+  z-index: 8888;
   will-change: width, height;
   @media (max-width: ${({ theme }) => theme.mobile}) {
     display: flex;

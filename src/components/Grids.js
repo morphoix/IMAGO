@@ -31,6 +31,7 @@ export default function Grids () {
   
     return (
       <Container style={{ ...rest, width: '100%', height: size }} onClick={() => setOpen(open => !open)}>
+        <Header />
         <h3>VIEW</h3>
         <Burger open={open} setOpen={setOpen} onClick={() => setOpen(open => !open)}/>
         {transitions.map(({ item, key, props }) => (
@@ -42,7 +43,6 @@ export default function Grids () {
             </div>
           </Item>
         ))}
-        <Header />
       </Container>
     )
   }

@@ -83,5 +83,11 @@ export default  [
       css: 'url(./assets/3Dmenu.png)',
       height: 400
     },
+    { id: 15,
+      nav: './Darkness',
+      name: 'Darkness',
+      css: 'url(./assets/darkness.png)',
+      height: 400
+    },
   ]
   
