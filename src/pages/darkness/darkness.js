@@ -83,21 +83,21 @@ export default function Darkness() {
           <HTMLContent
             domContent={domContent}
             bgColor='#52b788'
-            modelPath='src/assets/scene.gltf'
+            modelPath='/assets/scene.gltf'
             position={250}>
             <span>Upon you</span>
           </HTMLContent>
           <HTMLContent
             domContent={domContent}
             bgColor='#2d6a4f'
-            modelPath='src/assets/scene.gltf'
+            modelPath='/assets/scene.gltf'
             position={0}>
             <span>There is</span>
           </HTMLContent>
           <HTMLContent
             domContent={domContent}
             bgColor='#081c15'
-            modelPath='src/assets/scene.gltf'
+            modelPath='/assets/scene.gltf'
             position={-250}>
             <span>Darkness</span>
           </HTMLContent>

@@ -42,6 +42,9 @@ const GlobalStyles = createGlobalStyle`
     padding: 10px;
     right: 0;
     bottom: 0;
+    @media (max-width: ${({ theme }) => theme.mobile}) {
+      display: none;
+    }
   }
   h3 {
     display: table-cell;
@@ -69,6 +72,7 @@ const GlobalStyles = createGlobalStyle`
     bottom: 1rem;
     position: absolute;
     right: 10px;
+    text-transform: uppercase;
   }
   small a {
     text-transform: none;

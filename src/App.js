@@ -17,7 +17,8 @@ import { Home,
         FallsApart,
         Physis,
         ThreeDMenu,
-        Darkness } from './pages'
+        Darkness,
+        Ice } from './pages'
 import Grids from './components/Grids'
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
             <Route path={'/Physis'} exact component={ Physis } />
             <Route path={'/ThreeDMenu'} exact component={ ThreeDMenu } />
             <Route path={'/Darkness'} exact component={ Darkness } />
+            <Route path={'/Ice'} exact component={ Ice } />
           </Switch>
         </BrowserRouter>
       </ThemeProvider>

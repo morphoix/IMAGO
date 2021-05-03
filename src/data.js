@@ -89,5 +89,11 @@ export default  [
       css: 'url(./assets/darkness.png)',
       height: 400
     },
+    { id: 16,
+      nav: './Ice',
+      name: 'Ice',
+      css: 'url(./assets/ice.png)',
+      height: 400
+    },
   ]
   
