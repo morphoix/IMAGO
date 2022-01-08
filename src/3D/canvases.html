@@ -1,83 +1,81 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-        <title>3DMenu</title>
-        <style>
-            #main {
-                width: 100%;
-                height: 100%;
-            }
-            a {
-                text-decoration: none;
-                padding-left: 1px;
-                color: transparent;
-                text-shadow: 1px 1px 1px black;
-            }
-            .menu {
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>3DMenu</title>
+    <style>
+      #main {
+        width: 70vw;
+        height: 70vh;
+        margin-left: 150px;
+      }
+      a {
+        text-decoration: none;
+        padding-left: 1px;
+        color: transparent;
+        text-shadow: 1px 1px 1px #fff;
+      }
+      .menu {
+        height: 100%;
+      }
+      ul {
+        list-style-type: none;
+      }
+      #container {
+        right: 0;
+      }
+      #canvas1,
+      #canvas2,
+      #canvas3,
+      #canvas4,
+      #canvas5 {
+        position: relative;
+        display: block;
+        border: none;
+      }
+      #canvas1 {
+        width: 150px;
+        height: 150px;
+      }
 
-                height: 100%;
-            }
-            ul {
-                list-style-type: none;
-            }
-            #container {
-                right: 0;
-            }
-            #canvas1, #canvas2, #canvas3, #canvas4, #canvas5 {
-                position: relative;
-                display: block;
-                border: none;
-            }
-            #canvas1 {
-                width: 150px;
-                height: 150px;
-            }
+      #canvas2 {
+        width: 230px;
+        height: 80px;
+        left: 70px;
+      }
 
-            #canvas2 {
-                width: 230px;
-                height: 80px;
-                left: 70px;
-            }
+      #canvas3 {
+        width: 250px;
+        height: 45px;
+        left: 50px;
+      }
+      #canvas4 {
+        width: 200px;
+        height: 100px;
+        left: 100px;
+      }
+      #canvas5 {
+        width: 120px;
+        height: 300px;
+        left: 50px;
+      }
+    </style>
+  </head>
 
-            #canvas3 {
-                width: 250px;
-                height: 45px;
-                left: 50px;
-            }
-            #canvas4 {
-                width: 200px;
-                height: 100px;
-                left: 100px;
-            }
-            #canvas5 {
-                width: 120px;
-                height: 300px;
-                left: 50px;
-            }
-        </style>
-	</head>
-
-	<body>
-		<div id="main">
-			<div id="container">
-					<ul class="menu">
-						<li>
-							<canvas id="canvas1"></canvas><a href="">discover</a>
-						</li>
-						<li><canvas id="canvas4"></canvas><a href="">3d gallery</a></li>
-						<li><a href="">play</a></li>
-						<li>
-							<canvas id="canvas2"></canvas><a href="">community</a>
-						</li>
-						<li>
-							<canvas id="canvas3"></canvas><a href="">view</a>
-						</li>
-						<canvas id="canvas5"></canvas>
-					</ul>
-			</div>
-		</div>
-		<script type="module" src="js/canvases.js"></script>
-	</body>
+  <body>
+    <div id="main">
+      <div id="container">
+        <ul class="menu">
+          <li><canvas id="canvas1"></canvas><a href="">discover</a></li>
+          <li><canvas id="canvas4"></canvas><a href="">3d gallery</a></li>
+          <li><a href="">play</a></li>
+          <li><canvas id="canvas2"></canvas><a href="">community</a></li>
+          <li><canvas id="canvas3"></canvas><a href="">view</a></li>
+          <canvas id="canvas5"></canvas>
+        </ul>
+      </div>
+    </div>
+    <script type="module" src="js/canvases.js"></script>
+  </body>
 </html>

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const StyledBurger = styled.button`
   position: absolute;
@@ -12,26 +12,26 @@ export const StyledBurger = styled.button`
   background: transparent;
   border: none;
   padding: 0;
-  @media (max-width: ${({ theme }) => theme.mobile}) {
+  @media (max-width: ${({theme}) => theme.mobile}) {
     display: flex;
   }
   span {
     width: 2rem;
     height: 0.12rem;
-    background: ${({ theme, open }) => open ? theme.primaryLight : theme.primaryHover};
+    background: ${({theme, open}) => (open ? theme.primaryLight : theme.primaryHover)};
     border-radius: 10px;
     transition: all 0.8s linear;
     position: relative;
     transform-origin: 1px;
     :first-child {
-      transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
+      transform: ${({open}) => (open ? 'rotate(45deg)' : 'rotate(0)')};
     }
     :nth-child(2) {
-      transform: ${({ open }) => open ? 'translateX(20px)' : 'translateX(0)'};
-      opacity: ${({ open }) => open ? '0' : '1'};
+      transform: ${({open}) => (open ? 'translateX(20px)' : 'translateX(0)')};
+      opacity: ${({open}) => (open ? '0' : '1')};
     }
     :nth-child(3) {
-      transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
+      transform: ${({open}) => (open ? 'rotate(-45deg)' : 'rotate(0)')};
     }
   }
-`
+`;
