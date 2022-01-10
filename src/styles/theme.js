@@ -1,8 +1,6 @@
-
 export const theme = {
-    primaryDark: 'white',
-    primaryLight: '#023047',
-    primaryHover: '#fb8500',
-    primaryTransparent: 'rgba( 2, 48, 71, .9)',
-    mobile: '850px',
-  }
+  primaryDark: 'black',
+  primaryLight: '#edf2f4',
+  primaryHover: '#d90429',
+  mobile: '850px',
+};

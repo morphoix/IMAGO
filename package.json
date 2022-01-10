@@ -1,6 +1,6 @@
 {
   "name": "imago",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "private": true,
   "description": "Web gallery",
   "browserslist": "> 0.25%, not dead",
@@ -8,7 +8,8 @@
     "dev": "cross-env NODE_ENV=development webpack --mode development",
     "build": "cross-env NODE_ENV=production webpack --mode production",
     "watch": "cross-env NODE_ENV=development webpack --mode development --watch",
-    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open"
+    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open",
+    "format": "npx prettier --write . && npm run lint -- --fix"
   },
   "keywords": [
     "js",
@@ -35,7 +36,6 @@
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.9.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
-    "react-router-dom": "^5.2.0",
     "sass": "^1.32.11",
     "sass-loader": "^10.0.1",
     "style-loader": "^1.1.2",
@@ -46,19 +46,25 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.8.3",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.16",
     "@react-spring/three": "9.0.0-rc.3",
     "@react-three/drei": "^4.3.2",
     "@react-three/fiber": "^6.0.17",
+    "eslint": "^7.32.0",
     "lerp": "^1.0.3",
     "node-sass": "^4.14.1",
     "normalize.css": "^8.0.1",
+    "prettier": "^2.5.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-focus-lock": "^2.5.0",
     "react-intersection-observer": "^8.31.1",
+    "react-router-dom": "^6.2.1",
     "react-scripts": "^4.0.3",
     "react-spring": "^8.0.1",
     "styled-components": "^5.2.3",
-    "three": "^0.128.0"
+    "three": "^0.134.0"
   }
 }
