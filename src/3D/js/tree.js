@@ -1,11 +1,11 @@
-import * as THREE from './libs/three.module.js';
-import {EffectComposer} from './libs/EffectComposer.js';
-import {RenderPass} from './libs/RenderPass.js';
-import {ShaderPass} from './libs/ShaderPass.js';
-import {BloomPass} from './libs/BloomPass.js';
-import {FilmPass} from './libs/FilmPass.js';
-import {FocusShader} from './libs/FocusShader.js';
-import {OBJLoader} from './libs/OBJLoader.js';
+import * as THREE from 'https://cdn.skypack.dev/three@0.128.0/build/three.module.js';
+import {OBJLoader} from 'https://cdn.skypack.dev/three@0.128.0/examples/jsm/loaders/OBJLoader.js';
+import {EffectComposer} from 'https://cdn.skypack.dev/three@0.128.0/examples/jsm/postprocessing/EffectComposer.js';
+import {RenderPass} from 'https://cdn.skypack.dev/three@0.128.0/examples/jsm/postprocessing/RenderPass.js';
+import {ShaderPass} from 'https://cdn.skypack.dev/three@0.128.0/examples/jsm/postprocessing/ShaderPass.js';
+import {BloomPass} from 'https://cdn.skypack.dev/three@0.128.0/examples/jsm/postprocessing/BloomPass.js';
+import {FilmPass} from 'https://cdn.skypack.dev/three@0.128.0/examples/jsm/postprocessing/FilmPass.js';
+import {FocusShader} from 'https://cdn.skypack.dev/three@0.128.0/examples/jsm/shaders/FocusShader.js';
 
 let scene, camera, composer, renderer, effectFocus;
 let parent, mesh, meshLetter;

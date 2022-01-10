@@ -26,8 +26,8 @@ const GlobalStyles = createGlobalStyle`
   iframe {
     margin: 0;
     border: none;
-    padding: 100px;
-    border-radius: 8px;
+    padding: 70px;
+    z-index: 8888;
   }
   small {
     display: flex;
@@ -36,8 +36,7 @@ const GlobalStyles = createGlobalStyle`
     position: absolute;
     left: 10px;
     padding: 10px;
-    color: #942B3B;
-    z-index: 999;
+    color: white;
   }
   small a {
     text-transform: none;
@@ -46,14 +45,15 @@ const GlobalStyles = createGlobalStyle`
     text-shadow: none;
   }
   a {
-    font-size: 2em;
+    font-size: 20px;
     word-wrap: break-word;
     text-transform: uppercase;
     text-decoration: none;
     text-shadow: 1px 5px 4px #353652;
     text-align: center;
-    color: #942b3b;
+    color: #db222a;
     transition: all 0.5s;
+    z-index: 9999;
   }
   a:hover {
     text-shadow: 1px 2px 2px #fff;
@@ -61,7 +61,7 @@ const GlobalStyles = createGlobalStyle`
   }
   a.active {
     text-shadow: 1px 5px 4px #942b3b;
-    color: #01497c;
+    color: white;
   }
   button:active, button:focus, a:active, a:focus {
     outline: none !important;

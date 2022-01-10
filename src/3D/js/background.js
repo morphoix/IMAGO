@@ -50,48 +50,9 @@ loader.load('./files/helvetiker_regular.typeface.json', function (font) {
   animate();
 });
 
-let minButton = document.createElement('button');
-minButton.className = 'push';
-document.body.append(minButton);
-minButton.style.display = 'none';
-minButton.innerHTML = '<img src="./files/min.png" />';
-minButton.style.left = '2.5rem';
-
-let maxButton = document.createElement('button');
-maxButton.className = 'push';
-document.body.append(maxButton);
-maxButton.innerHTML = '<img src="./files/max.png" />';
-maxButton.style.left = '2.5rem';
-
-let playButton = document.createElement('button');
-playButton.className = 'push';
-document.body.append(playButton);
-playButton.innerHTML = '<img src="./files/mute.png" />';
-playButton.style.left = '4.5rem';
-playButton.style.paddingBottom = '3px';
-
-let muteButton = document.createElement('button');
-muteButton.className = 'push';
-document.body.append(muteButton);
-muteButton.innerHTML = '<img src="./files/volume.png" />';
-muteButton.style.display = 'none';
-muteButton.style.left = '4.5rem';
-muteButton.style.paddingBottom = '3px';
-
-buttons = [minButton, maxButton, playButton, muteButton];
-buttons.forEach(function (item, i, buttons) {
-  i = buttons[i];
-  i.style.position = 'absolute';
-  i.style.bottom = '1rem';
-  i.style.background = 'transparent';
-  i.style.cursor = 'pointer';
-  i.style.zIndex = '999';
-  i.style.border = 'none';
-});
-
 function init(font) {
   scene = new THREE.Scene();
-  scene.background = new THREE.Color(0xffffff);
+  scene.background = new THREE.Color(0x000814);
   camera = new THREE.PerspectiveCamera(55, WIDTH / HEIGHT, 1, 1000);
   camera.position.set(0, 10, 190);
   camera.lookAt(0, 0, 0);
@@ -110,7 +71,7 @@ function init(font) {
   audioLoader.load('./files/imago.ogg', function (buffer) {
     sound.setBuffer(buffer);
     sound.setLoop(true);
-    sound.setVolume(1);
+    sound.setVolume(0.5);
     sound.play();
   });
   camera.add(listener);
@@ -192,36 +153,6 @@ function init(font) {
   }
 }
 
-function max() {
-  maxButton.style.display = 'none';
-  minButton.style.display = 'block';
-  meshes.forEach(function (item, i, letters) {
-    i = meshes[i];
-    i.translateZ(80);
-  });
-}
-
-function min() {
-  minButton.style.display = 'none';
-  maxButton.style.display = 'block';
-  meshes.forEach(function (item, i, letters) {
-    i = meshes[i];
-    i.translateZ(-80);
-  });
-}
-
-function play() {
-  sound.stop();
-  muteButton.style.display = 'block';
-  playButton.style.display = 'none';
-}
-
-function mute() {
-  sound.play();
-  muteButton.style.display = 'none';
-  playButton.style.display = 'block';
-}
-
 function createControls(camera) {
   controls = new TrackballControls(camera, renderer.domElement);
   controls.rotateSpeed = 0.1;
@@ -246,11 +177,6 @@ function animate() {
 
 function render() {
   let time = Date.now() * 0.001;
-  maxButton.addEventListener('click', max);
-  minButton.addEventListener('click', min);
-  playButton.addEventListener('click', play);
-  muteButton.addEventListener('click', mute);
-
   uniforms.amplitude.value = 5 + Math.sin(time * 0.2);
   composer.render(0.01);
 }

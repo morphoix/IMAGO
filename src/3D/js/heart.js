@@ -7,12 +7,6 @@ import {EffectComposer} from 'https://cdn.skypack.dev/three@0.128.0/examples/jsm
 import {RenderPass} from 'https://cdn.skypack.dev/three@0.128.0/examples/jsm/postprocessing/RenderPass.js';
 import {UnrealBloomPass} from 'https://cdn.skypack.dev/three@0.128.0/examples/jsm/postprocessing/UnrealBloomPass.js';
 
-let startButton = document.getElementById('startButton');
-startButton.addEventListener('click', hide);
-function hide() {
-  document.getElementById('overlay').style.display = 'none';
-}
-
 let scene, renderer, container, camera, composer;
 let controls, sound, listener;
 let pointLight, pointLight2, textureCube, hall, heart, chest;

@@ -4,7 +4,7 @@ import {animated} from 'react-spring';
 import styled from 'styled-components';
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faDiceD20, faChevronCircleLeft} from '@fortawesome/free-solid-svg-icons';
+import {faDiceD20, faChevronCircleLeft, faHandSparkles} from '@fortawesome/free-solid-svg-icons';
 
 import {useTransition, useSpring, useChain, config} from 'react-spring';
 import data from '../data';
@@ -17,10 +17,11 @@ const Container = styled(animated.div)`
   width: 100%;
   height: auto;
   display: grid;
-  grid-template-columns: repeat(17, minmax(20px, 1fr));
+  grid-template-columns: repeat(20, minmax(20px, 1fr));
   grid-gap: 5px;
-  padding: 20px;
+  padding: 10px;
   cursor: pointer;
+  z-index: 10;
   will-change: width, heigh;
   @media (max-width: ${({theme}) => theme.mobile}) {
     display: flex;
@@ -50,20 +51,37 @@ const Item = styled(animated.div)`
 `;
 
 const Icon = styled(FontAwesomeIcon)`
-  color: #942b3b;
+  color: #db222a;
   font-size: 26px;
   margin: 10px;
-  z-index: 888;
+  transition: all 1s;
+  :hover {
+    color: white;
+  }
+`;
+
+const TouchIcon = styled(Icon)`
+  color: ${props => props.touch ? "#db222a" : "#053c5e"};
+`;
+
+const ToolWrapper = styled.div`
+  dispaly: flex;
+  flex-direction: row;
+  height: 30px;
+  width: 100px;
+  justify-content: flex-start;
+  z-index: 8889;
 `;
 
 export default function Grids() {
   const [open, setOpen] = useState(false);
+  const [touch, setTouch] = useState(false);
 
   const springRef = useRef();
   const {size, opacity, ...rest} = useSpring({
     ref: springRef,
     config: config.stiff,
-    from: {size: '1%', background: '#010C13'},
+    from: {size: '0', background: 'transparent'},
     to: {size: open ? '100%' : '0'},
   });
 
@@ -81,13 +99,16 @@ export default function Grids() {
   transitions.reverse();
 
   return (
-    <Container style={{...rest, width: '100%', height: size}} onClick={() => setOpen((open) => !open)}>
-      <Header open={open} />
-      {open ? <Icon icon={faChevronCircleLeft} /> : <Icon icon={faDiceD20} />}
+    <Container style={{...rest, width: '100%', height: size}}>
+      <Header open={open} touch={touch} />
+      <ToolWrapper>
+        {open ? <Icon icon={faChevronCircleLeft} onClick={() => setOpen(false)} /> : <Icon icon={faDiceD20} onClick={() => setOpen(!open)} />}
+      <TouchIcon icon={faHandSparkles} touch={touch ? 1 : 0}  onClick={() => setTouch(!touch)} />
+      </ToolWrapper>
       <Burger open={open} setOpen={setOpen} onClick={() => setOpen((open) => !open)} />
       {transitions.map(({item, key, props}) => (
         <Item key={key} style={{...props}}>
-          <NavLink to={item.nav || '/'}>{item.name}</NavLink>
+          <NavLink to={item.nav || '/'} onClick={() => setOpen(false)}>{item.name}</NavLink>
         </Item>
       ))}
     </Container>

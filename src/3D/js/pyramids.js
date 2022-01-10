@@ -189,7 +189,7 @@ function init() {
       invert = invert * -1;
       phase -= 2 * Math.PI;
     } else {
-      phase += 0.05;
+      phase += 0.005;
     }
     sphereLightMesh.position.z = +(14 * Math.sin(phase));
     sphereLightMesh.position.x = +(14 * Math.cos(phase));

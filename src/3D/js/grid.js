@@ -22,7 +22,7 @@ function init() {
   camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
 
   camera.lookAt(0, 0, 0);
-  camera.position.set(70, 0, 0);
+  camera.position.set(60, 0, 0);
 
   sun = new THREE.DirectionalLight(0xffb627, 1);
   sun.position.set(0, 90, 0);
@@ -79,7 +79,7 @@ function createObj() {
     let mosaic = new THREE.Mesh(
       geometry,
       new THREE.MeshPhongMaterial({
-        color: 0xffffff,
+        color: 0x023e8a,
       })
     );
     mosaic.position.x = 0;
@@ -107,11 +107,10 @@ function animate() {
 function render() {
   controls.update();
 
-  let lightTime = Date.now() * 0.0002;
+  let lightTime = Date.now() * 0.002;
   let d = 600;
   sun.position.x = Math.sin(lightTime * 0.3) * d;
   sun.position.z = Math.cos(lightTime * 0.7) * d;
-  tree.rotation.y += 0.001;
 
   // find intersections
   raycaster.setFromCamera(mouse, camera);
@@ -121,7 +120,7 @@ function render() {
       if (INTERSECTED) INTERSECTED.material.emissive.setHex(INTERSECTED.currentHex);
       INTERSECTED = intersects[0].object;
       INTERSECTED.currentHex = INTERSECTED.material.emissive.getHex();
-      INTERSECTED.material.color.set(0xbce784);
+      INTERSECTED.material.color.set(0x8ac926);
     }
   } else {
     if (INTERSECTED) INTERSECTED.material.color.set(INTERSECTED.currentColor);

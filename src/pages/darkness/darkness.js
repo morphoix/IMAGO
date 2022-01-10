@@ -1,7 +1,6 @@
 import React, {useRef, useEffect, useState, Suspense} from 'react';
 import './darkness.scss';
-//components
-import Header from './components/header';
+
 import state from './components/state';
 import {Canvas, useFrame} from '@react-three/fiber';
 import {Section} from './components/section';
@@ -12,6 +11,7 @@ const Model = ({url}) => {
   const gltf = useGLTF(url, true);
   return <primitive object={gltf.scene} dispose={null} />;
 };
+
 const Lights = () => {
   return (
     <>
@@ -36,7 +36,7 @@ const Lights = () => {
 
 const HTMLContent = ({domContent, children, bgColor, modelPath, position}) => {
   const ref = useRef();
-  useFrame(() => (ref.current.rotation.y += 0.001));
+  useFrame(() => (ref.current.rotation.y += 0.0001));
 
   const [refItem, inView] = useInView({threshold: 0});
   useEffect(() => {
@@ -68,17 +68,16 @@ export default function Darkness() {
 
   return (
     <>
-      <Header />
       <Canvas concurrent colorManagement camera={{position: [0, 0, 120], fov: 70}}>
         <Lights />
         <Suspense fallback={null}>
-          <HTMLContent domContent={domContent} bgColor="#52b788" modelPath="/assets/scene.gltf" position={250}>
+          <HTMLContent domContent={domContent} bgColor="#ced4da" modelPath="src/assets/scene.gltf" position={250}>
             <span>Upon you</span>
           </HTMLContent>
-          <HTMLContent domContent={domContent} bgColor="#2d6a4f" modelPath="/assets/scene.gltf" position={0}>
+          <HTMLContent domContent={domContent} bgColor="#ab2836" modelPath="src/assets/scene.gltf" position={0}>
             <span>There is</span>
           </HTMLContent>
-          <HTMLContent domContent={domContent} bgColor="#081c15" modelPath="/assets/scene.gltf" position={-250}>
+          <HTMLContent domContent={domContent} bgColor="#010C13" modelPath="src/assets/scene.gltf" position={-250}>
             <span>Darkness</span>
           </HTMLContent>
         </Suspense>

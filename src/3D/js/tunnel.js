@@ -142,7 +142,6 @@ function hslToRgb(h, s, l) {
 }
 
 Tunnel.prototype.updateCurve = function (delta) {
-  let i = 0;
   let index = 0;
   let vertice_o = null;
   let vertice = null;
@@ -162,7 +161,7 @@ Tunnel.prototype.updateCurve = function (delta) {
   this.splineMesh.geometry.verticesNeedUpdate = true;
   this.splineMesh.geometry.vertices = this.curve.getPoints(240);
 
-  delta *= 0.0001;
+  delta *= 0.00005;
   let f, p, h, rgb;
   for (let i = 0; i < this.tubeGeometry.faces.length; i++) {
     f = this.tubeGeometry.faces[i];
