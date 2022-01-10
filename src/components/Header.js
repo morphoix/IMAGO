@@ -70,9 +70,9 @@ export default function Header({open, touch}) {
         height: '100vh',
         position: 'absolute',
         left: '0',
-        display: touch ? 'none' : 'inherit'
+        display: touch ? 'none' : 'inherit',
       }}
-      id='frame'
+      id="frame"
     >
       <spotLight position={[-10, 10, 10]} angle={0.55} penumbra={2} />
       <spotLight position={[10, 10, 10]} angle={0.55} penumbra={2} />

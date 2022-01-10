@@ -61,7 +61,7 @@ const Icon = styled(FontAwesomeIcon)`
 `;
 
 const TouchIcon = styled(Icon)`
-  color: ${props => props.touch ? "#db222a" : "#053c5e"};
+  color: ${(props) => (props.touch ? '#db222a' : '#053c5e')};
 `;
 
 const ToolWrapper = styled.div`
@@ -102,13 +102,19 @@ export default function Grids() {
     <Container style={{...rest, width: '100%', height: size}}>
       <Header open={open} touch={touch} />
       <ToolWrapper>
-        {open ? <Icon icon={faChevronCircleLeft} onClick={() => setOpen(false)} /> : <Icon icon={faDiceD20} onClick={() => setOpen(!open)} />}
-      <TouchIcon icon={faHandSparkles} touch={touch ? 1 : 0}  onClick={() => setTouch(!touch)} />
+        {open ? (
+          <Icon icon={faChevronCircleLeft} onClick={() => setOpen(false)} />
+        ) : (
+          <Icon icon={faDiceD20} onClick={() => setOpen(!open)} />
+        )}
+        <TouchIcon icon={faHandSparkles} touch={touch ? 1 : 0} onClick={() => setTouch(!touch)} />
       </ToolWrapper>
       <Burger open={open} setOpen={setOpen} onClick={() => setOpen((open) => !open)} />
       {transitions.map(({item, key, props}) => (
         <Item key={key} style={{...props}}>
-          <NavLink to={item.nav || '/'} onClick={() => setOpen(false)}>{item.name}</NavLink>
+          <NavLink to={item.nav || '/'} onClick={() => setOpen(false)}>
+            {item.name}
+          </NavLink>
         </Item>
       ))}
     </Container>

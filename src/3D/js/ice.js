@@ -97,7 +97,7 @@ function animate() {
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
   raycaster.setFromCamera(mouse, camera);
-  
+
   frame += 0.01;
 
   const {array, originalPosition, randomValues} = planeMesh.geometry.attributes.position;

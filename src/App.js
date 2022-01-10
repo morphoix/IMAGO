@@ -21,7 +21,7 @@ function App() {
         <Grids />
         <Routes>
           <Route path={'/'} element={<Navigate to="home" replace={true} />} />
-          <Route path={'home'} index element={<Pages.Home />}  />
+          <Route path={'home'} index element={<Pages.Home />} />
           <Route path={'Gyza'} element={<Pages.Gyza />} />
           <Route path={'Berries'} element={<Pages.Berries />} />
           <Route path={'Ocean'} element={<Pages.Ocean />} />
