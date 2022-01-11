@@ -13,4 +13,5 @@ export default [
   {id: 12, nav: 'ThreeDMenu', name: '3DMenu'},
   {id: 13, nav: 'Darkness', name: 'Darkness'},
   {id: 14, nav: 'Ice', name: 'Ice'},
+  {id: 15, nav: 'Globe', name: 'Globe'},
 ];

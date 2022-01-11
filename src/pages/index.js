@@ -12,3 +12,4 @@ export {default as Physis} from './Physis';
 export {default as ThreeDMenu} from './ThreeDMenu';
 export {default as Darkness} from './darkness/darkness';
 export {default as Ice} from './Ice';
+export {default as Planet} from './globe-component';

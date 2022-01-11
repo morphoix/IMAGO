@@ -35,6 +35,7 @@ function App() {
           <Route path={'ThreeDMenu'} element={<Pages.ThreeDMenu />} />
           <Route path={'Darkness'} element={<Pages.Darkness />} />
           <Route path={'Ice'} element={<Pages.Ice />} />
+          <Route path={'Globe'} element={<Pages.Planet />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

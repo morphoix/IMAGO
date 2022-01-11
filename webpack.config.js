@@ -52,6 +52,9 @@ module.exports = {
   mode: 'development',
   devServer: {
     historyApiFallback: true,
+    open: true,
+    compress: true,
+    hot: true,
   },
   /*devServer: {
         historyApiFallback: true,
@@ -98,34 +101,6 @@ module.exports = {
     new CopyWebpackPlugin([
       {
         from: path.resolve(__dirname, 'src/favicon.ico'),
-        to: path.resolve(__dirname, 'dist'),
-      },
-      {
-        from: path.resolve(__dirname, '/src/android-chrome-192x192.png'),
-        to: path.resolve(__dirname, 'dist'),
-      },
-      {
-        from: path.resolve(__dirname, '/src/android-chrome-512x512.png'),
-        to: path.resolve(__dirname, 'dist'),
-      },
-      {
-        from: path.resolve(__dirname, '/src/favicon-16x16.png'),
-        to: path.resolve(__dirname, 'dist'),
-      },
-      {
-        from: path.resolve(__dirname, '/src/favicon-32x32.png'),
-        to: path.resolve(__dirname, 'dist'),
-      },
-      {
-        from: path.resolve(__dirname, 'src/mstile-150x150.png'),
-        to: path.resolve(__dirname, 'dist'),
-      },
-      {
-        from: path.resolve(__dirname, 'src/safari-pinned-tab.svg'),
-        to: path.resolve(__dirname, 'dist'),
-      },
-      {
-        from: path.resolve(__dirname, 'src/imago-png'),
         to: path.resolve(__dirname, 'dist'),
       },
       {from: path.resolve(__dirname, 'src/3D'), to: path.resolve(__dirname, 'dist/3D')},
@@ -176,7 +151,7 @@ module.exports = {
         },
       },
       {
-        test: /\.js|jsx$/,
+        test: /(\.jsx?|\.tsx?)(\?|$)/,
         exclude: /node_modules/,
         loader: {
           loader: 'babel-loader',

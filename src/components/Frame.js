@@ -33,7 +33,7 @@ function Frame(props) {
         color={'#053c5e'}
         emissive={'#010C13'}
         roughness={0.5}
-        metalness={0.5}
+        metalness={0.9}
         wireframe={true}
         wireframeLinewidth={2}
         reflectivity={1}
@@ -53,7 +53,7 @@ function Sphere(props) {
         speed={0.1}
         color={'#db222a'}
         emissive={'#010C13'}
-        roughness={0.5}
+        roughness={0.4}
         wireframe={true}
         wireframeLinewidth={10}
         metalness={0.9}

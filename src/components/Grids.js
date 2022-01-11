@@ -9,7 +9,7 @@ import {faDiceD20, faChevronCircleLeft, faHandSparkles} from '@fortawesome/free-
 import {useTransition, useSpring, useChain, config} from 'react-spring';
 import data from '../data';
 import Burger from './Burger/Burger';
-import Header from './Header';
+import Header from './Frame';
 
 const Container = styled(animated.div)`
   position: absolute;
