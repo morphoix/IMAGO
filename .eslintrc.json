@@ -1,0 +1,40 @@
+{
+  "env": {
+    "node": true,
+    "browser": true,
+    "es2021": true,
+    "jest": true
+  },
+  "extends": ["plugin:react/recommended", "eslint:recommended"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "react-hooks"],
+  "rules": {
+    "no-undef": 2,
+    "no-undefined": 0,
+    "valid-jsdoc": 0,
+    "require-jsdoc": 0,
+    "no-unused-vars": 0,
+    "no-trailing-spaces": 1,
+    "no-multi-spaces": 1,
+    "object-curly-spacing": 1,
+    "sort-imports": 0,
+    "space-in-parens": 1,
+    "max-len": 0,
+    "react/display-name": 0,
+    "no-multiple-empty-lines": 1,
+    "react/prop-types": 1,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": [
+      "warn",
+      {
+        "additionalHooks": "(useRecoilCallback|useRecoilTransaction_UNSTABLE)"
+      }
+    ]
+  }
+}

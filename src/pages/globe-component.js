@@ -1,4 +1,3 @@
-
 import React, {useRef, useEffect} from 'react';
 import styled from 'styled-components';
 
@@ -11,7 +10,10 @@ import {UnrealBloomPass} from 'three/examples/jsm/postprocessing/UnrealBloomPass
 
 import countries from '../assets/countries.json';
 
-let renderer; let scene; let controls; let composer;
+let renderer;
+let scene;
+let controls;
+let composer;
 let Globe;
 let camera;
 const mouseX = 0;
@@ -95,19 +97,19 @@ const Planet = () => {
     function initGlobe() {
       Globe = new ThreeGlobe();
       Globe.hexPolygonsData(countries.features)
-          .hexPolygonResolution(3)
-          .hexPolygonMargin(0.4)
-          .hexPolygonColor((e) => {
-            if (['KGZ', 'KOR', 'THA', 'RUS', 'UZB', 'IDN', 'KAZ', 'MYS'].includes(e.properties.ISO_A3)) {
-              return '#08a045';
-            } else return '#ffea00';
-          })
-          .showGlobe(false)
-          .showAtmosphere(true)
-          .atmosphereColor('#014737')
-          .atmosphereAltitude(0.8)
-          .rotateY(-Math.PI * (5 / 9))
-          .rotateZ(-Math.PI / 6);
+        .hexPolygonResolution(3)
+        .hexPolygonMargin(0.4)
+        .hexPolygonColor((e) => {
+          if (['KGZ', 'KOR', 'THA', 'RUS', 'UZB', 'IDN', 'KAZ', 'MYS'].includes(e.properties.ISO_A3)) {
+            return '#08a045';
+          } else return '#ffea00';
+        })
+        .showGlobe(false)
+        .showAtmosphere(true)
+        .atmosphereColor('#014737')
+        .atmosphereAltitude(0.8)
+        .rotateY(-Math.PI * (5 / 9))
+        .rotateZ(-Math.PI / 6);
       scene.add(Globe);
       Globe.position.x = 90;
     }

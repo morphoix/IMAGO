@@ -100,7 +100,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin([
       {
-        from: path.resolve(__dirname, 'src/favicon.ico'),
+        from: path.resolve(__dirname, 'public/favicon.ico'),
         to: path.resolve(__dirname, 'dist'),
       },
       {from: path.resolve(__dirname, 'src/3D'), to: path.resolve(__dirname, 'dist/3D')},

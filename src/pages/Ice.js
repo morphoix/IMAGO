@@ -5,6 +5,7 @@ const Ice = () => {
   const size = useWindowSize();
   return (
     <iframe
+      title="Ice"
       src="3D/ice.html"
       style={{
         width: size.width,

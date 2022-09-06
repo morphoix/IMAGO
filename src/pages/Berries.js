@@ -5,6 +5,7 @@ const Berries = () => {
   const size = useWindowSize();
   return (
     <iframe
+      title="Strawberry"
       src="3D/strawberry.html"
       style={{
         width: size.width,
