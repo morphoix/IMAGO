@@ -5,6 +5,7 @@ const ThreeDMenu = () => {
   const size = useWindowSize();
   return (
     <iframe
+      title="Menu example"
       src="3D/canvases.html"
       style={{
         width: size.width,
